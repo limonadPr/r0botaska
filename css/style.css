@@ -1,0 +1,401 @@
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #f4f6fa;
+}
+
+/* LAYOUT */
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 320px;
+    background-image: url("../img/909284.webp");
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-right: 1px solid transparent;
+    border-image: linear-gradient(to bottom, #ddd, #f5f5f5, #ddd) 1;
+    transition: 0.3s ease;
+}
+
+.sidebar input,
+.sidebar textarea {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+.sidebar.closed {
+    margin-left: -360px;
+}
+
+.sidebar textarea {
+    height: 100px;
+    resize: none;
+}
+
+.file input {
+    display: none;
+}
+
+.file {
+    background: #2f2f45;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.sidebar button {
+    padding: 10px;
+    background: #4CAF50;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+
+/* MAIN */
+.main {
+    flex: 1;
+    padding: 30px;
+    background-image: url("../img/922275.png");
+}
+
+.task {
+    background: rgba(48, 48, 48, 0.927);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    position: relative;
+    
+    z-index: 1;
+}
+
+/* CHECKLIST */
+.checklist {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.checklist li {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.checklist input[type="checkbox"] {
+    transform: scale(1.2);
+}
+
+/* IMAGE */
+.task img {
+    max-width: 200px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* DELETE */
+.delete {
+    margin-top: 10px;
+    background: red;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* ARCHIVE */
+.archive{
+    margin-top: 10px;
+    background: rgb(255, 111, 0);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* edit */
+.edit{
+    margin-top: 10px;
+    background: rgb(0, 193, 51);
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* pin */
+.pin{
+    margin-top: 10px;
+    background: rgb(0, 81, 255);
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+
+.task.pinned{
+    border: 2px solid #ffd54f;
+}
+
+.archive-panel {
+    display: none;
+}
+
+
+h1{
+    color: white;
+}
+
+h3{
+    color: white;
+}
+
+li{
+    color: white;
+}
+
+.checklist input:checked + span {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.search{
+    width: 1000px;
+    height: 50px;
+    background-color: cornflowerblue;
+    padding-left: 10px;
+    border-radius: 5px;
+    border-color: darkblue;
+    opacity: 0.95;
+}
+.search::placeholder {
+    color: white;
+}
+
+.search-icon {
+    color: cornflowerblue;  
+    font-size: 24px;         
+    vertical-align: middle;  
+    margin-right: 15px;      
+}
+
+.empty {
+    color: white;
+    text-align: center;
+    margin-top: 80px;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.empty i {
+    display: block;
+    font-size: 80px;
+    margin-bottom: 20px;
+}
+
+
+.date {
+    display: block;
+    margin: 10px 0;
+    color: #aaa;
+    font-size: 14px;
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+
+    color: #aaa;
+    font-size: 12px;
+}
+
+.sidebar.collapsed {
+    width: 60px;
+    padding: 20px 5px;
+}
+
+.sidebar.collapsed input,
+.sidebar.collapsed textarea,
+.sidebar.collapsed .file,
+.sidebar.collapsed button,
+.sidebar.collapsed h2 {
+    display: none;
+}
+
+.menu-btn {
+    position: absolute;
+    top: 20px;
+    left: 280px;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #a07eef;
+    color: white;
+    cursor: pointer;
+
+    z-index: 10000;
+    transition: .3s;
+}
+
+.sidebar.closed ~ .main .menu-btn {
+    left: 20px;
+}
+
+
+
+
+.archive-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(255,255,255,.1);
+
+    padding: 10px;
+    margin-bottom: 10px;
+
+    border-radius: 8px;
+}
+
+.archive-title {
+    color: white;
+}
+
+.archive-actions {
+    display: flex;
+    gap: 5px;
+}
+
+.restore,
+.delete-archive {
+    border: none;
+    cursor: pointer;
+
+    padding: 8px 10px;
+    border-radius: 6px;
+}
+
+.restore {
+    background: #4CAF50;
+    color: white;
+}
+
+.delete-archive {
+    background: crimson;
+    color: white;
+}
+
+.ajs-message {
+    border-radius: 12px !important;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.ajs-success {
+    background: #4CAF50 !important;
+}
+
+.ajs-error {
+    background: #e53935 !important;
+}
+
+.ajs-warning {
+    background: #ff9800 !important;
+}
+
+
+.edit-modal{
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.edit-box{
+    width: 550px;
+    max-width: 90%;
+    background: #2f2f45;
+    color: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0,0,0,.5);
+}
+
+.edit-modal.active{
+    display: flex;
+}
+
+.edit-box input,
+.edit-box textarea{
+    width:100%;
+    box-sizing:border-box;
+
+    margin-top:10px;
+    padding:12px;
+
+    border:none;
+    border-radius:8px;
+}
+
+.edit-box textarea{
+    height:180px;
+    resize:none;
+}
+
+.edit-buttons{
+    display:flex;
+    gap:10px;
+    margin-top:15px;
+}
+
+.save-edit,
+.close-edit{
+    border:none;
+    padding:10px 15px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.save-edit{
+    background:#4CAF50;
+    color:white;
+}
+
+.close-edit{
+    background:#e53935;
+    color:white;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.rules{
+    text-decoration: none;
+    display: inline-block;
+    transform: translateY(270px);
+    width: 320px;
+}

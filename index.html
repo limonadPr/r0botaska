@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+   
+    <head>
+        <meta charset="UTF-8">
+        <title>R0boList</title>
+        <link rel="icon" type="image/x-icon" href="img/favicon.ico?v=2">
+
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs/build/css/alertify.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs/build/css/themes/default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="icon" type="image/png" href="favicon.png">
+    </head>
+    
+    
+
+<script src="https://cdn.jsdelivr.net/npm/alertifyjs/build/alertify.min.js"></script>
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h2>
+            <i class="fa-solid fa-circle-plus"></i> Нова задача
+            
+        </h2>
+
+        <input type="text" placeholder="Назва задачі">
+
+        <textarea placeholder="Пункти (по одному в рядок)"></textarea>
+
+        <label class="file">
+            <i class="fa-solid fa-image" style="margin-right: 10px;"></i>Фото
+            <input type="file" accept="image/*">
+        </label>
+
+        <button>
+            <i class="fa-solid fa-circle-plus"></i>
+            Додати
+        </button>
+        <button class="open-archive">
+            <i class="fa-solid fa-box-archive"></i>
+            Архів
+        </button>
+
+        <div class="archive-panel">
+            <h2>
+                <i class="fa-solid fa-box-archive"></i>
+                Архів
+            </h2>
+            <div class="archive-list"></div>
+        </div>
+
+
+       <a href="rules.html">
+
+         <button class="rules">
+            <i class="fa-solid fa-scale-balanced"></i> правила
+        </button>
+
+        </a>
+    </div>
+
+    <!-- MAIN -->
+
+    <div class="main">
+        <button class="menu-btn">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <center>
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="search" placeholder="search..." class="search">
+        </center>
+
+        <h1><i class="fa-solid fa-list" style="margin-right: 10px;"></i> Список задач</h1>
+        <div class="pinned-tasks"></div>
+        <!-- TASK -->
+        
+    </div>
+    <div class="edit-modal">
+        <div class="edit-box">
+    
+            <h2>
+                <i class="fa-solid fa-pen-to-square"></i>
+                Редагування
+            </h2>
+    
+            <input type="text" class="edit-title" placeholder="Назва задачі">
+    
+            <textarea class="edit-text" placeholder="Пункти (по одному в рядок)"></textarea>
+    
+            <div class="edit-buttons">
+                <button class="save-edit">
+                    <i class="fa-solid fa-floppy-disk"></i>
+                    Зберегти
+                </button>
+    
+                <button class="close-edit">
+                    <i class="fa-solid fa-xmark"></i>
+                    Закрити
+                </button>
+            </div>
+    
+        </div>
+    </div>
+</div>
+
+
+<script src="JavaScript/main.js"></script>
+</body>
+</html>
